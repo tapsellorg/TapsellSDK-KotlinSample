@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Tapsell Kotlin Sample</string>
+    <string name="interstitial">Interstitial</string>
+    <string name="standard_banner">Standard Banner</string>
+    <string name="native_string">Native</string>
+    <string name="reward">Reward</string>
+    <string name="pre_roll">Pre-roll</string>
+    <string name="zone_types">Zone Types</string>
+    <string name="interstitial_banner">Request Interstitial Banner</string>
+    <string name="interstitial_video">Request Interstitial Video</string>
+    <string name="show_ad">Show Ad</string>
+    <string name="ad_is_not_available">ad is not available</string>
 </resources>
