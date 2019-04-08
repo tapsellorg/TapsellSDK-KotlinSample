@@ -14,12 +14,12 @@ import ir.tapsell.tapsellsdkkotlinsample.model.ListItemType
 import kotlinx.android.synthetic.main.list_ad_item.view.*
 import kotlinx.android.synthetic.main.list_item.view.*
 
-const val VIEW_TYPE_ITEM = 0
-const val VIEW_TYPE_AD = 1
 
 class NativeBannerAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: MutableList<ItemList> = ArrayList()
+    private val VIEW_TYPE_ITEM = 0
+    private val VIEW_TYPE_AD = 1
 
     fun updateItem(items: List<ItemList>) {
         this.items.clear()

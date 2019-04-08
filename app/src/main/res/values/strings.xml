@@ -14,4 +14,5 @@
     <string name="native_video_in_activity">Native Video In Activity</string>
     <string name="native_video_in_list">Native Video In List</string>
     <string name="request_native_banner">Request Native Banner</string>
+    <string name="request_native_video">Request Native Video</string>
 </resources>
