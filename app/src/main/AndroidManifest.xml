@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ir.tapsell.tapsellsdkkotlinsample">
+          package="ir.tapsell.tapsellsdkkotlinsample">
 
     <application
         android:name=".App"
@@ -10,26 +10,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".navideAds.NativeActivity">
+        </activity>
+        <activity android:name=".navideAds.NativeVideoInListActivity">
+        </activity>
+        <activity android:name=".navideAds.NativeBannerInListActivity"/>
+        <activity android:name=".navideAds.NativeVideoActivity"/>
+        <activity android:name=".navideAds.NativeBannerActivity"/>
         <activity
             android:name="ir.tapsell.sdk.TapsellAdActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
-
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
 
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".PreRollActivity" />
-        <activity android:name=".RewardActivity" />
-        <activity android:name=".StandardActivity" />
-        <activity android:name=".NativeActivity" />
-        <activity android:name=".InterstitialActivity" />
+        <activity android:name=".PreRollActivity"/>
+        <activity android:name=".RewardActivity"/>
+        <activity android:name=".StandardActivity"/>
+        <activity android:name=".nativeAds.NativeActivity"/>
+        <activity android:name=".InterstitialActivity"/>
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@ package ir.tapsell.tapsellsdkkotlinsample
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.tapsell.sdk.*
 import ir.tapsell.sdk.TapsellAdRequestOptions.CACHE_TYPE_STREAMED
@@ -33,15 +32,17 @@ class InterstitialActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        btnInterstitialBanner.setOnClickListener { requestInterstitialBannerAd() }
-        btnInterstitialVideo.setOnClickListener { requestInterstitialVideoAd() }
+        btnInterstitialBanner.setOnClickListener { requestInterstitialBannerAd(AdType.BANNER) }
+        btnInterstitialVideo.setOnClickListener { requestInterstitialBannerAd(AdType.VIDEO) }
         btnShowAd.setOnClickListener { showAd() }
         btnShowAd.isEnabled = false
     }
 
-    private fun requestInterstitialBannerAd() {
+    private fun requestInterstitialBannerAd(type: AdType) {
         val options = TapsellAdRequestOptions(CACHE_TYPE_STREAMED)
-        Tapsell.requestAd(this@InterstitialActivity, BuildConfig.TAPSELL_INTERSTITIAL_BANNER, options,
+        Tapsell.requestAd(this@InterstitialActivity,
+                if(type == AdType.BANNER) BuildConfig.TAPSELL_INTERSTITIAL_BANNER else
+                    BuildConfig.TAPSELL_INTERSTITIAL_VIDEO, options,
                 object : TapsellAdRequestListener {
                     override fun onAdAvailable(ad: TapsellAd?) {
                         if (isDestroyed)
@@ -66,31 +67,31 @@ class InterstitialActivity : AppCompatActivity() {
                     override fun onNoNetwork() {
                         TODO("not implemented")
                     }
-
                 })
-    }
-
-    private fun requestInterstitialVideoAd() {
-
     }
 
     private fun showAd() {
         ad?.let {
             val showOptions = TapsellShowOptions()
+            showOptions.rotationMode = TapsellShowOptions.ROTATION_LOCKED_PORTRAIT
             it.show(this@InterstitialActivity, showOptions, object : TapsellAdShowListener {
                 override fun onOpened(ad: TapsellAd) {
-                    Log.e("MainActivity", "on ad opened")
+                    Log.e("InterstitialActivity", "on ad opened")
                 }
 
                 override fun onClosed(ad: TapsellAd) {
-                    Log.e("MainActivity", "on ad closed")
+                    Log.e("InterstitialActivity", "on ad closed")
                 }
             })
-        }.run {
-            Toast.makeText(this@InterstitialActivity,
-                    getString(R.string.ad_is_not_available), Toast.LENGTH_LONG).show()
+        } ?: run {
+            Log.e("InterstitialActivity", "ad is not available")
         }
 
         btnShowAd.isEnabled = false
+        ad = null
     }
+}
+
+enum class AdType {
+    BANNER, VIDEO
 }

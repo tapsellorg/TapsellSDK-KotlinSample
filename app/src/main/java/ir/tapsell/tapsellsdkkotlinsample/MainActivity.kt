@@ -3,6 +3,7 @@ package ir.tapsell.tapsellsdkkotlinsample
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ir.tapsell.tapsellsdkkotlinsample.navideAds.NativeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
