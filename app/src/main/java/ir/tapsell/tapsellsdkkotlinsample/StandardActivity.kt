@@ -1,15 +1,13 @@
 package ir.tapsell.tapsellsdkkotlinsample
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
-import android.widget.LinearLayout
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import ir.tapsell.sdk.bannerads.TapsellBannerType
 import ir.tapsell.sdk.bannerads.TapsellBannerView
 import kotlinx.android.synthetic.main.activity_standard.*
-import android.view.Gravity
-import android.widget.FrameLayout
-
 
 class StandardActivity : AppCompatActivity() {
 
