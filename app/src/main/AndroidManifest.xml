@@ -29,7 +29,7 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".PreRollActivity"/>
+        <activity android:name=".prerollAds.PreRollActivity"/>
         <activity android:name=".RewardActivity"/>
         <activity android:name=".StandardActivity"/>
         <activity android:name=".nativeAds.NativeActivity"/>
