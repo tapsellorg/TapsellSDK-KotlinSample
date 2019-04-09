@@ -16,4 +16,5 @@
     <string name="request_native_banner">Request Native Banner</string>
     <string name="request_native_video">Request Native Video</string>
     <string name="request_pre_roll_video">Request Pre-Roll Video</string>
+    <string name="request_standard_banner">Request Standard Banner</string>
 </resources>
