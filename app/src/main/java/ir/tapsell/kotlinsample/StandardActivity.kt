@@ -28,19 +28,25 @@ class StandardActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btnStandardBanner.setOnClickListener {
-            bannerView.loadAd(this@StandardActivity, BuildConfig.TAPSELL_STANDARD_BANNER,
-                    TapsellBannerType.BANNER_320x50)
+            bannerView.loadAd(
+                this@StandardActivity, BuildConfig.TAPSELL_STANDARD_BANNER,
+                TapsellBannerType.BANNER_320x50
+            )
 
             inflateDynamicalBannerView()
         }
     }
 
     private fun inflateDynamicalBannerView() {
-        val banner = TapsellBannerView(this, TapsellBannerType.BANNER_320x50,
-                BuildConfig.TAPSELL_STANDARD_BANNER)
+        val banner = TapsellBannerView(
+            this, TapsellBannerType.BANNER_320x50,
+            BuildConfig.TAPSELL_STANDARD_BANNER
+        )
 
-        val layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.WRAP_CONTENT)
+        val layoutParams = FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.WRAP_CONTENT
+        )
         layoutParams.gravity = Gravity.CENTER_HORIZONTAL
 
         banner.layoutParams = layoutParams

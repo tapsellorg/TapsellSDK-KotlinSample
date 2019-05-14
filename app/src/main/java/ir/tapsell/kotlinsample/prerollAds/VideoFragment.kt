@@ -14,9 +14,11 @@ class VideoFragment : Fragment() {
 
     private var videoPlayerController: VideoPlayerController? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? =
-            inflater.inflate(R.layout.fragment_video, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
+        inflater.inflate(R.layout.fragment_video, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,10 +28,12 @@ class VideoFragment : Fragment() {
 
     private fun initView(rootView: View) {
         val mVideoPlayerWithAdPlayback =
-                rootView.findViewById(R.id.videoPlayerWithAdPlayback) as VideoPlayerWithAdPlayback
+            rootView.findViewById(R.id.videoPlayerWithAdPlayback) as VideoPlayerWithAdPlayback
 
-        videoPlayerController = VideoPlayerController(this.activity, mVideoPlayerWithAdPlayback,
-                playButton, videoExampleLayout, "fa", null)
+        videoPlayerController = VideoPlayerController(
+            this.activity, mVideoPlayerWithAdPlayback,
+            playButton, videoExampleLayout, "fa", null
+        )
 
         // If we've already selected a video, load it now.
         loadVideo()
@@ -40,8 +44,10 @@ class VideoFragment : Fragment() {
             return
         }
         videoPlayerController!!.setContentVideo("https://storage.backtory.com/tapsell-server/sdk/VASTContentVideo.mp4")
-        videoPlayerController!!.adTagUrl = TapsellVast.getAdTag(BuildConfig.TAPSELL_PRE_ROL_VIDEO,
-                TapsellVast.PREROLL_TYPE_BOTH, TapsellVast.VAST_VERSION_3)
+        videoPlayerController!!.adTagUrl = TapsellVast.getAdTag(
+            BuildConfig.TAPSELL_PRE_ROL_VIDEO,
+            TapsellVast.PREROLL_TYPE_BOTH, TapsellVast.VAST_VERSION_3
+        )
     }
 
     override fun onPause() {

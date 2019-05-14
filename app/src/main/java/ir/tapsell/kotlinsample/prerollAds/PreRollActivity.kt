@@ -33,8 +33,10 @@ class PreRollActivity : AppCompatActivity() {
 
     private fun initView() {
         if (supportFragmentManager.findFragmentByTag(VIDEO_EXAMPLE_FRAGMENT_TAG) == null) {
-            supportFragmentManager.beginTransaction().add(R.id.adContainer, VideoFragment(),
-                    VIDEO_EXAMPLE_FRAGMENT_TAG).commit()
+            supportFragmentManager.beginTransaction().add(
+                R.id.adContainer, VideoFragment(),
+                VIDEO_EXAMPLE_FRAGMENT_TAG
+            ).commit()
         }
     }
 }

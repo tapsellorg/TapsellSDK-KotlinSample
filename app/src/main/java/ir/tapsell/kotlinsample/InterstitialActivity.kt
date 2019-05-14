@@ -41,33 +41,33 @@ class InterstitialActivity : AppCompatActivity() {
     private fun requestInterstitialBannerAd(type: AdType) {
         val options = TapsellAdRequestOptions(CACHE_TYPE_STREAMED)
         Tapsell.requestAd(this@InterstitialActivity,
-                if(type == AdType.BANNER) BuildConfig.TAPSELL_INTERSTITIAL_BANNER else
-                    BuildConfig.TAPSELL_INTERSTITIAL_VIDEO, options,
-                object : TapsellAdRequestListener {
-                    override fun onAdAvailable(ad: TapsellAd?) {
-                        if (isDestroyed)
-                            return
+            if (type == AdType.BANNER) BuildConfig.TAPSELL_INTERSTITIAL_BANNER else
+                BuildConfig.TAPSELL_INTERSTITIAL_VIDEO, options,
+            object : TapsellAdRequestListener {
+                override fun onAdAvailable(ad: TapsellAd?) {
+                    if (isDestroyed)
+                        return
 
-                        this@InterstitialActivity.ad = ad
-                        btnShowAd.isEnabled = true
-                    }
+                    this@InterstitialActivity.ad = ad
+                    btnShowAd.isEnabled = true
+                }
 
-                    override fun onExpiring(ad: TapsellAd?) {
-                        TODO("not implemented")
-                    }
+                override fun onExpiring(ad: TapsellAd?) {
+                    TODO("not implemented")
+                }
 
-                    override fun onNoAdAvailable() {
-                        TODO("not implemented")
-                    }
+                override fun onNoAdAvailable() {
+                    TODO("not implemented")
+                }
 
-                    override fun onError(str: String?) {
-                        TODO("not implemented")
-                    }
+                override fun onError(str: String?) {
+                    TODO("not implemented")
+                }
 
-                    override fun onNoNetwork() {
-                        TODO("not implemented")
-                    }
-                })
+                override fun onNoNetwork() {
+                    TODO("not implemented")
+                }
+            })
     }
 
     private fun showAd() {

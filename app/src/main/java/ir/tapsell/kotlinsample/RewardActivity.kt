@@ -36,31 +36,31 @@ class RewardActivity : AppCompatActivity() {
     private fun requestAd() {
         val options = TapsellAdRequestOptions(CACHE_TYPE_STREAMED)
         Tapsell.requestAd(this@RewardActivity, BuildConfig.TAPSELL_REWARDED_VIDEO, options,
-                object : TapsellAdRequestListener {
-                    override fun onAdAvailable(ad: TapsellAd?) {
-                        if (isDestroyed)
-                            return
+            object : TapsellAdRequestListener {
+                override fun onAdAvailable(ad: TapsellAd?) {
+                    if (isDestroyed)
+                        return
 
-                        this@RewardActivity.ad = ad
-                        showAd()
-                    }
+                    this@RewardActivity.ad = ad
+                    showAd()
+                }
 
-                    override fun onExpiring(ad: TapsellAd?) {
-                        TODO("not implemented")
-                    }
+                override fun onExpiring(ad: TapsellAd?) {
+                    TODO("not implemented")
+                }
 
-                    override fun onNoAdAvailable() {
-                        TODO("not implemented")
-                    }
+                override fun onNoAdAvailable() {
+                    TODO("not implemented")
+                }
 
-                    override fun onError(str: String?) {
-                        TODO("not implemented")
-                    }
+                override fun onError(str: String?) {
+                    TODO("not implemented")
+                }
 
-                    override fun onNoNetwork() {
-                        TODO("not implemented")
-                    }
-                })
+                override fun onNoNetwork() {
+                    TODO("not implemented")
+                }
+            })
     }
 
     private fun showAd() {

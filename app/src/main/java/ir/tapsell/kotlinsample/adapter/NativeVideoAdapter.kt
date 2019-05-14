@@ -24,12 +24,16 @@ class NativeVideoAdapter(val context: Context) : RecyclerView.Adapter<RecyclerVi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             VIEW_TYPE_AD -> {
-                NativeBannerListItemAdHolder(context, LayoutInflater
-                        .from(context).inflate(R.layout.list_large_ad_item, parent, false))
+                NativeBannerListItemAdHolder(
+                    context, LayoutInflater
+                        .from(context).inflate(R.layout.list_large_ad_item, parent, false)
+                )
             }
             VIEW_TYPE_ITEM -> {
-                ItemHolder(LayoutInflater
-                        .from(context).inflate(R.layout.list_large_item, parent, false))
+                ItemHolder(
+                    LayoutInflater
+                        .from(context).inflate(R.layout.list_large_item, parent, false)
+                )
             }
             else -> throw RuntimeException("Invalid view type in NativeVideoAdapter")
         }
@@ -46,27 +50,27 @@ class NativeVideoAdapter(val context: Context) : RecyclerView.Adapter<RecyclerVi
                 } else {
                     holder.clear()
                     TapsellNativeVideoAdLoader.Builder()
-                            .setContentViewTemplate(R.layout.tapsell_content_video_ad_template)
-                            .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_video_ad_template)
-                            .setAutoStartVideoOnScreenEnabled(true)
-                            .setFullscreenBtnEnabled(false)
-                            .loadAd(context, BuildConfig.TAPSELL_NATIVE_VIDEO,
-                                    object : TapsellNativeVideoAdLoadListener {
+                        .setContentViewTemplate(R.layout.tapsell_content_video_ad_template)
+                        .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_video_ad_template)
+                        .setAutoStartVideoOnScreenEnabled(true)
+                        .setFullscreenBtnEnabled(false)
+                        .loadAd(context, BuildConfig.TAPSELL_NATIVE_VIDEO,
+                            object : TapsellNativeVideoAdLoadListener {
 
-                                        override fun onNoNetwork() {
-                                        }
+                                override fun onNoNetwork() {
+                                }
 
-                                        override fun onNoAdAvailable() {
-                                        }
+                                override fun onNoAdAvailable() {
+                                }
 
-                                        override fun onError(error: String) {
-                                        }
+                                override fun onError(error: String) {
+                                }
 
-                                        override fun onRequestFilled(tapsellNativeVideoAd: TapsellNativeVideoAd) {
-                                            ads[holder.getAdapterPosition()] = tapsellNativeVideoAd
-                                            holder.bindView(tapsellNativeVideoAd)
-                                        }
-                                    })
+                                override fun onRequestFilled(tapsellNativeVideoAd: TapsellNativeVideoAd) {
+                                    ads[holder.getAdapterPosition()] = tapsellNativeVideoAd
+                                    holder.bindView(tapsellNativeVideoAd)
+                                }
+                            })
                 }
             }
         }

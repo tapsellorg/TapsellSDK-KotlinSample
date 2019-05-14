@@ -30,12 +30,16 @@ class NativeBannerAdapter(val context: Context) : RecyclerView.Adapter<RecyclerV
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             VIEW_TYPE_AD -> {
-                NativeBannerListItemAdHolder(context, LayoutInflater
-                        .from(context).inflate(R.layout.list_ad_item, parent, false))
+                NativeBannerListItemAdHolder(
+                    context, LayoutInflater
+                        .from(context).inflate(R.layout.list_ad_item, parent, false)
+                )
             }
             VIEW_TYPE_ITEM -> {
-                ItemHolder(LayoutInflater
-                        .from(context).inflate(R.layout.list_item, parent, false))
+                ItemHolder(
+                    LayoutInflater
+                        .from(context).inflate(R.layout.list_item, parent, false)
+                )
             }
             else -> throw RuntimeException("Invalid view type in NativeBannerAdapter")
         }
@@ -61,19 +65,21 @@ class NativeBannerAdapter(val context: Context) : RecyclerView.Adapter<RecyclerV
     }
 
     override fun getItemCount(): Int {
-        return items.size ?: 0
+        return items.size
     }
 
     class NativeBannerListItemAdHolder(val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nativeBannerViewManager: TapsellNativeBannerViewManager = TapsellNativeBannerManager.Builder()
-                .setParentView(itemView.adContainer)
-                .setContentViewTemplate(R.layout.tapsell_content_banner_ad_template)
-                .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_banner_ad_template)
-                .inflateTemplate(context)
+            .setParentView(itemView.adContainer)
+            .setContentViewTemplate(R.layout.tapsell_content_banner_ad_template)
+            .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_banner_ad_template)
+            .inflateTemplate(context)
 
         fun bindView(item: ItemList) {
-            TapsellNativeBannerManager.bindAd(context, nativeBannerViewManager,
-                    BuildConfig.TAPSELL_NATIVE_BANNER, item.id)
+            TapsellNativeBannerManager.bindAd(
+                context, nativeBannerViewManager,
+                BuildConfig.TAPSELL_NATIVE_BANNER, item.id
+            )
         }
     }
 

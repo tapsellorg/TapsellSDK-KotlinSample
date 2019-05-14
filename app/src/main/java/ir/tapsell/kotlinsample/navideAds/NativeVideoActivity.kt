@@ -36,35 +36,45 @@ class NativeVideoActivity : AppCompatActivity() {
 
     private fun requestNativeVideoAd() {
         TapsellNativeVideoAdLoader.Builder()
-                .setContentViewTemplate(R.layout.tapsell_content_video_ad_template)
-                .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_video_ad_template)
-                .setAutoStartVideoOnScreenEnabled(false)
-                .setFullscreenBtnEnabled(true)
-                .setMuteVideoBtnEnabled(true)
-                .setMuteVideo(false)
-                .loadAd(this, BuildConfig.TAPSELL_NATIVE_VIDEO,
-                        object : TapsellNativeVideoAdLoadListener {
+            .setContentViewTemplate(R.layout.tapsell_content_video_ad_template)
+            .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_video_ad_template)
+            .setAutoStartVideoOnScreenEnabled(false)
+            .setFullscreenBtnEnabled(true)
+            .setMuteVideoBtnEnabled(true)
+            .setMuteVideo(false)
+            .loadAd(this, BuildConfig.TAPSELL_NATIVE_VIDEO,
+                object : TapsellNativeVideoAdLoadListener {
 
-                            override fun onRequestFilled(tapsellNativeVideoAd: TapsellNativeVideoAd) {
-                                tapsellNativeVideoAd.setCompletionListener { adId -> Log.e("Tapsell", "onAdShowFinished: $adId") }
+                    override fun onRequestFilled(tapsellNativeVideoAd: TapsellNativeVideoAd) {
+                        tapsellNativeVideoAd.setCompletionListener { adId ->
+                            Log.e(
+                                "Tapsell",
+                                "onAdShowFinished: $adId"
+                            )
+                        }
 
-                                tapsellNativeVideoAd.setProgressListener { adId, progress -> Log.e("Tapsell", "onNativeAdProgress: $progress") }
+                        tapsellNativeVideoAd.setProgressListener { _, progress ->
+                            Log.e(
+                                "Tapsell",
+                                "onNativeAdProgress: $progress"
+                            )
+                        }
 
-                                tapsellNativeVideoAd.setOnClickListener { }
-                                tapsellNativeVideoAd.addToParentView(adParent)
-                            }
+                        tapsellNativeVideoAd.setOnClickListener { }
+                        tapsellNativeVideoAd.addToParentView(adParent)
+                    }
 
-                            override fun onNoAdAvailable() {
-                                TODO("not implemented")
-                            }
+                    override fun onNoAdAvailable() {
+                        TODO("not implemented")
+                    }
 
-                            override fun onError(p0: String?) {
-                                TODO("not implemented")
-                            }
+                    override fun onError(p0: String?) {
+                        TODO("not implemented")
+                    }
 
-                            override fun onNoNetwork() {
-                                TODO("not implemented")
-                            }
-                        })
+                    override fun onNoNetwork() {
+                        TODO("not implemented")
+                    }
+                })
     }
 }

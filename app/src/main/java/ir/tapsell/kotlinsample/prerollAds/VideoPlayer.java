@@ -8,7 +8,7 @@ package ir.tapsell.kotlinsample.prerollAds;
 public interface VideoPlayer {
 
     /**
-     *  Interface for alerting caller of major video events.
+     * Interface for alerting caller of major video events.
      */
     public interface PlayerCallback {
 

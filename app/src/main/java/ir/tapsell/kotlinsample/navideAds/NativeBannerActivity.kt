@@ -40,25 +40,27 @@ class NativeBannerActivity : AppCompatActivity() {
         }
 
         nativeBannerViewManager = TapsellNativeBannerManager.Builder()
-                .setParentView(adContainer)
-                .setContentViewTemplate(R.layout.tapsell_content_banner_ad_template)
-                .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_banner_ad_template)
-                .inflateTemplate(this)
+            .setParentView(adContainer)
+            .setContentViewTemplate(R.layout.tapsell_content_banner_ad_template)
+            .setAppInstallationViewTemplate(R.layout.tapsell_app_installation_banner_ad_template)
+            .inflateTemplate(this)
     }
 
     private fun requestNativeBannerAd() {
         TapsellNativeBannerManager.getAd(this@NativeBannerActivity, BuildConfig.TAPSELL_NATIVE_BANNER,
-                object : AdRequestCallback {
-                    override fun onResponse(adId: Array<String>) {
-                        TapsellNativeBannerManager.bindAd(this@NativeBannerActivity,
-                                nativeBannerViewManager,
-                                BuildConfig.TAPSELL_NATIVE_BANNER,
-                                adId[0])
-                    }
+            object : AdRequestCallback {
+                override fun onResponse(adId: Array<String>) {
+                    TapsellNativeBannerManager.bindAd(
+                        this@NativeBannerActivity,
+                        nativeBannerViewManager,
+                        BuildConfig.TAPSELL_NATIVE_BANNER,
+                        adId[0]
+                    )
+                }
 
-                    override fun onFailed(message: String) {
-                        Log.e("NativeBannerActivity", "Error: $message")
-                    }
-                })
+                override fun onFailed(message: String) {
+                    Log.e("NativeBannerActivity", "Error: $message")
+                }
+            })
     }
 }

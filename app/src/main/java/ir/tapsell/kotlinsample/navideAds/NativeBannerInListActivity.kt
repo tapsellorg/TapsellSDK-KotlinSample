@@ -41,14 +41,18 @@ class NativeBannerInListActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putSerializable(STATE_LIST, items)
 
-        TapsellNativeBannerManager.onSaveInstanceState(this,
-                BuildConfig.TAPSELL_NATIVE_BANNER, outState)
+        TapsellNativeBannerManager.onSaveInstanceState(
+            this,
+            BuildConfig.TAPSELL_NATIVE_BANNER, outState
+        )
         super.onSaveInstanceState(outState)
     }
 
     private fun restoreState(savedInstanceState: Bundle) {
-        TapsellNativeBannerManager.onRestoreInstanceState(this,
-                BuildConfig.TAPSELL_NATIVE_BANNER, savedInstanceState)
+        TapsellNativeBannerManager.onRestoreInstanceState(
+            this,
+            BuildConfig.TAPSELL_NATIVE_BANNER, savedInstanceState
+        )
 
         items.addAll(savedInstanceState.getSerializable(STATE_LIST) as ArrayList<ItemList>)
         updateList()
@@ -73,8 +77,10 @@ class NativeBannerInListActivity : AppCompatActivity() {
     }
 
     private fun initAdCache() {
-        TapsellNativeBannerManager.createCache(this, BuildConfig.TAPSELL_NATIVE_BANNER,
-                CacheSize.MEDIUM)
+        TapsellNativeBannerManager.createCache(
+            this, BuildConfig.TAPSELL_NATIVE_BANNER,
+            CacheSize.MEDIUM
+        )
     }
 
     private fun initList() {
@@ -99,8 +105,9 @@ class NativeBannerInListActivity : AppCompatActivity() {
 
                 if (!isLoading) {
                     if (visibleItemCount + firstVisibleItemPosition >= totalItemCount &&
-                            firstVisibleItemPosition >= 0 &&
-                            totalItemCount >= pageSize) {
+                        firstVisibleItemPosition >= 0 &&
+                        totalItemCount >= pageSize
+                    ) {
                         generateItems(++currentPage)
                     }
                 }
@@ -130,21 +137,21 @@ class NativeBannerInListActivity : AppCompatActivity() {
 
     private fun getNativeBannerAd() {
         TapsellNativeBannerManager.getAd(this, BuildConfig.TAPSELL_NATIVE_BANNER,
-                object : AdRequestCallback {
-                    override fun onResponse(adsId: Array<String>) {
-                        val item = ItemList()
+            object : AdRequestCallback {
+                override fun onResponse(adsId: Array<String>) {
+                    val item = ItemList()
 
-                        item.id = adsId[0]
-                        item.listItemType = ListItemType.AD
+                    item.id = adsId[0]
+                    item.listItemType = ListItemType.AD
 
-                        items.add(item)
+                    items.add(item)
 
-                        updateList()
-                    }
+                    updateList()
+                }
 
-                    override fun onFailed(message: String) {
-                        Log.e("NativeBannerActivity", "Error: $message")
-                    }
-                })
+                override fun onFailed(message: String) {
+                    Log.e("NativeBannerActivity", "Error: $message")
+                }
+            })
     }
 }
