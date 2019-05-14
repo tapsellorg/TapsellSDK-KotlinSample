@@ -1,10 +1,10 @@
 package ir.tapsell.kotlinsample
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 import ir.tapsell.sdk.Tapsell
 import ir.tapsell.sdk.TapsellConfiguration
 
-class App : Application() {
+class App : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
