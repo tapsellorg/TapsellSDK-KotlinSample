@@ -12,7 +12,15 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "TAPSELL_KEY", "\"kttjtpmdehsmnhlkkrlfekisnfifqtdallotfeccaspodsnqspelhcinjjdbiqtmhaglsn\""
+        buildConfigField "String", "TAPSELL_INTERSTITIAL_BANNER", "\"5caae7c33a2e170001ef9392\""
+        buildConfigField "String", "TAPSELL_INTERSTITIAL_VIDEO", "\"5caaeffec1ed8b000149cedc\""
+        buildConfigField "String", "TAPSELL_REWARDED_VIDEO", "\"5caaf03dc1ed8b000149cedd\""
+        buildConfigField "String", "TAPSELL_NATIVE_VIDEO", "\"5caaf094c1ed8b000149cee0\""
+        buildConfigField "String", "TAPSELL_NATIVE_BANNER", "\"5caaf0aec1ed8b000149cee1\""
+        buildConfigField "String", "TAPSELL_STANDARD_BANNER", "\"5ca8aca83a2e170001ef0071\""
+        buildConfigField "String", "TAPSELL_PRE_ROL_VIDEO", "\"5cac31e2b4ace90001836d64\""
     }
     buildTypes {
         release {
@@ -24,11 +32,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
     implementation 'androidx.core:core-ktx:1.1.0-alpha05'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    implementation 'ir.tapsell.sdk:tapsell-sdk-android:4.1.7'
+    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.8.7'
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
 }
