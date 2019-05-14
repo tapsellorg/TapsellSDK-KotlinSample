@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.adapter
+package ir.tapsell.kotlinsample.adapter
 
 import android.content.Context
 import android.util.Log
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAd
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAdLoadListener
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAdLoader
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.list_large_ad_item.view.*
 import kotlinx.android.synthetic.main.list_large_item.view.*
 import java.util.*

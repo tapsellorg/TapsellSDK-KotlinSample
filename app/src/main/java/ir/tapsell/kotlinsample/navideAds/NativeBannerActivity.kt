@@ -1,15 +1,14 @@
-package ir.tapsell.tapsellsdkkotlinsample.navideAds
+package ir.tapsell.kotlinsample.navideAds
 
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.tapsell.sdk.AdRequestCallback
 import ir.tapsell.sdk.nativeads.TapsellNativeBannerManager
 import ir.tapsell.sdk.nativeads.TapsellNativeBannerViewManager
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.activity_native_banner.*
 
 class NativeBannerActivity : AppCompatActivity() {

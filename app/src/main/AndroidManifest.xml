@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ir.tapsell.tapsellsdkkotlinsample">
+          package="ir.tapsell.kotlinsample">
 
     <application
         android:name=".App"
@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+                android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+                android:value="true" />
         <activity android:name=".navideAds.NativeActivity">
         </activity>
         <activity android:name=".navideAds.NativeVideoInListActivity">

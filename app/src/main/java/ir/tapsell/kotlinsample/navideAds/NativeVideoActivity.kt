@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.navideAds
+package ir.tapsell.kotlinsample.navideAds
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAd
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAdLoadListener
 import ir.tapsell.sdk.nativeads.TapsellNativeVideoAdLoader
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.activity_native_video.*
 
 class NativeVideoActivity : AppCompatActivity() {

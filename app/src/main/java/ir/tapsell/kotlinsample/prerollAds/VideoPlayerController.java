@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.prerollAds;
+package ir.tapsell.kotlinsample.prerollAds;
 
 import android.content.Context;
 import android.view.MotionEvent;

@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.model
+package ir.tapsell.kotlinsample.model
 
 import java.io.Serializable
 

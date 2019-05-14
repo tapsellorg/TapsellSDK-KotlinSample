@@ -1,10 +1,10 @@
-package ir.tapsell.tapsellsdkkotlinsample.navideAds
+package ir.tapsell.kotlinsample.navideAds
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.activity_native.*
 
 class NativeActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample
+package ir.tapsell.kotlinsample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

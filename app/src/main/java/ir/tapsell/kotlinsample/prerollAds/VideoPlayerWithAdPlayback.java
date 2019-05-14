@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.prerollAds;
+package ir.tapsell.kotlinsample.prerollAds;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,7 +12,7 @@ import java.util.List;
 import ir.tapsell.sdk.vast.ContentProgressProvider;
 import ir.tapsell.sdk.vast.VideoAdPlayer;
 import ir.tapsell.sdk.vast.VideoProgressUpdate;
-import ir.tapsell.tapsellsdkkotlinsample.R;
+import ir.tapsell.kotlinsample.R;
 
 
 /**

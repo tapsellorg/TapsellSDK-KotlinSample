@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.navideAds
+package ir.tapsell.kotlinsample.navideAds
 
 import android.os.Bundle
 import android.util.Log
@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import ir.tapsell.sdk.AdRequestCallback
 import ir.tapsell.sdk.CacheSize
 import ir.tapsell.sdk.nativeads.TapsellNativeBannerManager
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
-import ir.tapsell.tapsellsdkkotlinsample.adapter.NativeBannerAdapter
-import ir.tapsell.tapsellsdkkotlinsample.model.ItemList
-import ir.tapsell.tapsellsdkkotlinsample.model.ListItemType
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
+import ir.tapsell.kotlinsample.adapter.NativeBannerAdapter
+import ir.tapsell.kotlinsample.model.ItemList
+import ir.tapsell.kotlinsample.model.ListItemType
 import kotlinx.android.synthetic.main.activity_native_banner_in_list.*
 
 class NativeBannerInListActivity : AppCompatActivity() {

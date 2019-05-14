@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.adapter
+package ir.tapsell.kotlinsample.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ir.tapsell.sdk.nativeads.TapsellNativeBannerManager
 import ir.tapsell.sdk.nativeads.TapsellNativeBannerViewManager
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
-import ir.tapsell.tapsellsdkkotlinsample.model.ItemList
-import ir.tapsell.tapsellsdkkotlinsample.model.ListItemType
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
+import ir.tapsell.kotlinsample.model.ItemList
+import ir.tapsell.kotlinsample.model.ListItemType
 import kotlinx.android.synthetic.main.list_ad_item.view.*
 import kotlinx.android.synthetic.main.list_item.view.*
 

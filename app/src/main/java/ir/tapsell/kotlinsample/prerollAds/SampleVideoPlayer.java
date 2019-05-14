@@ -1,6 +1,6 @@
 // Copyright 2014 Google Inc. All Rights Reserved.
 
-package ir.tapsell.tapsellsdkkotlinsample.prerollAds;
+package ir.tapsell.kotlinsample.prerollAds;
 
 import android.content.Context;
 import android.media.MediaPlayer;

@@ -1,10 +1,10 @@
-package ir.tapsell.tapsellsdkkotlinsample
+package ir.tapsell.kotlinsample
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ir.tapsell.tapsellsdkkotlinsample.navideAds.NativeActivity
-import ir.tapsell.tapsellsdkkotlinsample.prerollAds.PreRollActivity
+import ir.tapsell.kotlinsample.navideAds.NativeActivity
+import ir.tapsell.kotlinsample.prerollAds.PreRollActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -1,9 +1,9 @@
-package ir.tapsell.tapsellsdkkotlinsample.prerollAds
+package ir.tapsell.kotlinsample.prerollAds
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.activity_pre_roll.*
 
 class PreRollActivity : AppCompatActivity() {

@@ -1,11 +1,11 @@
-package ir.tapsell.tapsellsdkkotlinsample.navideAds
+package ir.tapsell.kotlinsample.navideAds
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ir.tapsell.tapsellsdkkotlinsample.R
-import ir.tapsell.tapsellsdkkotlinsample.adapter.NativeVideoAdapter
+import ir.tapsell.kotlinsample.R
+import ir.tapsell.kotlinsample.adapter.NativeVideoAdapter
 import kotlinx.android.synthetic.main.activity_native_video_in_list.*
 
 class NativeVideoInListActivity : AppCompatActivity() {

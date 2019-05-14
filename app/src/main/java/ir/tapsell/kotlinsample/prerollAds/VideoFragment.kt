@@ -1,4 +1,4 @@
-package ir.tapsell.tapsellsdkkotlinsample.prerollAds
+package ir.tapsell.kotlinsample.prerollAds
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ir.tapsell.sdk.vast.TapsellVast
-import ir.tapsell.tapsellsdkkotlinsample.BuildConfig
-import ir.tapsell.tapsellsdkkotlinsample.R
+import ir.tapsell.kotlinsample.BuildConfig
+import ir.tapsell.kotlinsample.R
 import kotlinx.android.synthetic.main.fragment_video.*
 
 class VideoFragment : Fragment() {
